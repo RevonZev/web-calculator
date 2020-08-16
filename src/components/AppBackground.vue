@@ -1,9 +1,19 @@
 <template>
-  <div></div>
+  <div id="app-background"></div>
 </template>
 
 <script>
 export default {};
 </script>
 
-<style></style>
+<style scoped>
+#app-background {
+  margin: auto auto;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../assets/background.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+</style>
