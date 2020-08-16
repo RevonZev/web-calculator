@@ -1,5 +1,8 @@
 # calculator
 
+This is a personal project of mine. A web based calculator. Javascript, Vue, CSS practice.
+Will probably made it into a program with Electron.
+
 ## Project setup
 ```
 npm install
