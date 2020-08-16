@@ -2,10 +2,6 @@
   <div id="app-background"></div>
 </template>
 
-<script>
-export default {};
-</script>
-
 <style scoped>
 #app-background {
   margin: auto auto;
