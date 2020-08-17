@@ -68,7 +68,8 @@ export default {
       var event_innerHTML = event.target.innerText;
 
       target.focus();
-      target.setSelectionRange(0, 0)
+      target.setSelectionRange(-1, -1)
+      target.blur()
 
 
       if (event_innerHTML.includes("<")) {
@@ -117,8 +118,8 @@ export default {
 }
 
 .calculator-screen {
-  color: #131112;
   position: absolute;
+  color: #131112;
   top: 20px;
   left: 20px;
   width: 301px;
