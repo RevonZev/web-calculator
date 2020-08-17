@@ -95,6 +95,7 @@ export default {
   text-align: right;
   background: none;
   border: none;
+  caret-color: rgba(0, 0, 0, 0);
 }
 
 .screen-question-text {
