@@ -118,7 +118,7 @@ export default {
 
 .calculator-screen {
   color: #131112;
-  position: relative;
+  position: absolute;
   top: 20px;
   left: 20px;
   width: 301px;
@@ -166,7 +166,7 @@ export default {
 }
 
 .screen-question-text {
-  position: relative;
+  position: absolute;
   top: calc(75% - (30px / 2));
   left: 5%;
   width: 261px;
