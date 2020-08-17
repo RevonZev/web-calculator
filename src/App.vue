@@ -20,6 +20,7 @@ export default {
 
 <style>
 body {
+  font-family: "Roboto Condensed";
   margin: 0;
 }
 </style>
