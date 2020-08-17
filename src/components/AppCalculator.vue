@@ -13,7 +13,27 @@
         v-on:input="updateScreenLine()"
         v-model="screen_text"
       />
-      <div class="screen-question-text">{{ screen_text_answer }}</div>
+      <div class="screen-question-text">{{ screen_text_question }}</div>
+    </div>
+    <div class="calculator-buttons">
+      <div class="buttons-a">
+        <button
+          v-for="(text, index) in button_texts_a"
+          :key="index"
+          v-on:click.prevent="addCalculatorString($event)"
+        >
+          {{ text }}
+        </button>
+      </div>
+      <div class="buttons-b">
+        <button
+          v-for="(text, index) in button_texts_b"
+          :key="index"
+          v-on:click.prevent="addCalculatorString($event)"
+        >
+          {{ text }}
+        </button>
+      </div>
     </div>
   </div>
 </template>
@@ -24,13 +44,66 @@ export default {
     return {
       screen_has_text: false,
       screen_text: "",
-      screen_text_answer: "",
+      screen_text_question: "",
+      button_texts_a: [
+        "1", "2", "3",
+        "4", "5", "6",
+        "7", "8", "9",
+        "0", ".", "=",
+      ],
+      button_texts_b: ["<", "/", "x", "+", "-"],
     };
   },
   methods: {
-    updateScreenLine() {
-      this.screen_has_text = this.screen_text != "" ? true : false;
+    updateScreenLine(force = false) {
+      if (!force) {
+        this.screen_has_text = this.screen_text != "" && !force ? true : false;
+      } else {
+        this.screen_has_text = true;
+      }
     },
+    addCalculatorString(event) {
+      var event_innerHTML = event.target.innerText;
+      const exceptions = [".", "/", "x", "+", "-"]
+
+      if (event_innerHTML.includes("<")) {
+        this.screen_text = this.screen_text.slice(0, -1);
+        this.updateScreenLine()
+        return 0;
+      } 
+      
+      this.updateScreenLine(true)
+
+      if (!isNaN(parseInt(event_innerHTML))) {
+        this.screen_text += event_innerHTML;
+        return 0;
+      }
+
+      if (event_innerHTML.includes("x")) {
+        this.screen_text += "*";
+        return 0;
+      } else if (event_innerHTML.includes("=")) {
+        this.screen_text_question = this.screen_text;
+        this.screen_text = eval(this.screen_text).toString()
+        return 0;
+      }
+
+      exceptions.forEach(exception => {
+        if (event_innerHTML.includes(exception)) {
+          this.screen_text += event_innerHTML;
+        }
+      });
+    },
+    setCaret (element) {
+    var range = document.createRange()
+    var sel = window.getSelection()
+    
+    range.setStart(element.value.slice(-1))
+    range.collapse(true)
+    
+    sel.removeAllRanges()
+    sel.addRange(range)
+}
   },
 };
 </script>
@@ -95,7 +168,6 @@ export default {
   text-align: right;
   background: none;
   border: none;
-  caret-color: rgba(0, 0, 0, 0);
 }
 
 .screen-question-text {
@@ -110,5 +182,52 @@ export default {
   text-align: right;
   background: none;
   border: none;
+}
+
+.calculator-buttons {
+  display: flex;
+  position: absolute;
+  top: 160px;
+  left: 20px;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.calculator-buttons button {
+  background: #edddd4;
+  color: #2c282a;
+  border: 0;
+  box-shadow: none;
+}
+
+.buttons-a {
+  display: flex;
+  flex-wrap: wrap;
+  width: 234px;
+  justify-content: space-between;
+}
+
+.buttons-b {
+  display: flex;
+  flex-wrap: wrap;
+  width: 67px;
+  justify-content: space-between;
+  margin-left: 10px;
+}
+
+.buttons-a button {
+  font-size: 55px;
+  width: 67px;
+  height: 67px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.buttons-b button {
+  font-size: 30px;
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  margin-bottom: 3px;
 }
 </style>
