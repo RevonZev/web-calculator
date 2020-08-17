@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="1280px" height="720px" viewBox="0 0 1280 720" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <desc>Created with Lunacy</desc>
+  <defs>
+    <rect width="1280" height="720" id="slice_1" />
+    <clipPath id="clip_1">
+      <use xlink:href="#slice_1" clip-rule="evenodd" />
+    </clipPath>
+  </defs>
+  <g id="Slice" clip-path="url(#clip_1)">
+    <use xlink:href="#slice_1" stroke="none" fill="none" />
+    <g id="App" transform="translate(-336 -74)">
+      <path d="M0 0L1280 0L1280 720L0 720L0 0Z" transform="translate(336 74)" id="Screen-Size-Copy" fill="#D3D3D3" stroke="none" />
+      <g id="BG">
+        <path d="M0 0L1280 0L1280 720L0 720L0 0Z" transform="translate(330 74)" id="BG-Color" fill="#196468" stroke="none" />
+        <g id="Left">
+          <g id="3" transform="translate(117 0)">
+            <path d="M0 1L429 1" transform="translate(98 109)" id="Line" fill="none" stroke="#197278" stroke-width="100" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M0 1L429 1" transform="translate(0 266)" id="Line-2" fill="none" stroke="#197278" stroke-width="100" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M0 1L429 1" transform="translate(46 491)" id="Line-3" fill="none" stroke="#197278" stroke-width="100" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M0 1L429 1" transform="translate(29 670)" id="Line-4" fill="none" stroke="#197278" stroke-width="100" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M0 1L429 1" transform="translate(44 831)" id="Line-5" fill="none" stroke="#197278" stroke-width="100" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M541 24.0765C395.616 129.053 301 299.977 301 493C301 683.637 393.291 852.718 535.631 958L0 958L0 0L541 0L541 24.0765Z" transform="translate(44 0)" id="Rectangle-Difference" fill="#197278" fill-rule="evenodd" stroke="none" />
+          </g>
+          <g id="2" transform="translate(41 0)">
+            <path d="M0 1L429 1" transform="translate(125 59)" id="Line" fill="none" stroke="#289097" stroke-width="100" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M0 1L429 1" transform="translate(0 208)" id="Line-2" fill="none" stroke="#289097" stroke-width="100" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M0 1L429 1" transform="translate(73 413)" id="Line-3" fill="none" stroke="#289097" stroke-width="100" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M0 1L429 1" transform="translate(69 620)" id="Line-4" fill="none" stroke="#289097" stroke-width="100" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M541 24.0765C395.616 129.053 301 299.977 301 493C301 683.637 393.291 852.718 535.631 958L0 958L0 0L541 0L541 24.0765Z" transform="translate(35 0)" id="Rectangle-Difference" fill="#289097" fill-rule="evenodd" stroke="none" />
+          </g>
+          <g id="1">
+            <path d="M0 1L429 1" transform="translate(109 153)" id="Line-2" fill="none" stroke="#3AB1B9" stroke-width="100" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M0 1L429 1" transform="translate(38 344)" id="Line-3" fill="none" stroke="#3AB1B9" stroke-width="100" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M0 1L429 1" transform="translate(38 557)" id="Line-4" fill="none" stroke="#3AB1B9" stroke-width="100" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M0 1L429 1" transform="translate(62 753)" id="Line-5" fill="none" stroke="#3AB1B9" stroke-width="100" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M541 24.0765C395.616 129.053 301 299.977 301 493C301 683.637 393.291 852.718 535.631 958L0 958L0 0L541 0L541 24.0765Z" id="Rectangle-Difference" fill="#3AB1B9" fill-rule="evenodd" stroke="none" />
+          </g>
+        </g>
+        <g id="Right" transform="matrix(-1 0 0 -1 1939 958)">
+          <g id="3" transform="translate(117 0)">
+            <path d="M0 1L429 1" transform="translate(0 266)" id="Line-2" fill="none" stroke="#197278" stroke-width="100" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M0 1L429 1" transform="translate(46 491)" id="Line-3" fill="none" stroke="#197278" stroke-width="100" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M0 1L429 1" transform="translate(29 670)" id="Line-4" fill="none" stroke="#197278" stroke-width="100" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M0 1L429 1" transform="translate(44 831)" id="Line-5" fill="none" stroke="#197278" stroke-width="100" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M541 24.0765C395.616 129.053 301 299.977 301 493C301 683.637 393.291 852.718 535.631 958L0 958L0 0L541 0L541 24.0765Z" transform="translate(44 0)" id="Rectangle-Difference" fill="#197278" fill-rule="evenodd" stroke="none" />
+          </g>
+          <g id="2" transform="translate(41 0)">
+            <path d="M0 1L429 1" transform="translate(0 208)" id="Line-2" fill="none" stroke="#289097" stroke-width="100" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M0 1L429 1" transform="translate(73 413)" id="Line-3" fill="none" stroke="#289097" stroke-width="100" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M0 1L429 1" transform="translate(69 620)" id="Line-4" fill="none" stroke="#289097" stroke-width="100" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M0 1L429 1" transform="translate(46 863)" id="Line-5" fill="none" stroke="#289097" stroke-width="100" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M541 24.0765C395.616 129.053 301 299.977 301 493C301 683.637 393.291 852.718 535.631 958L0 958L0 0L541 0L541 24.0765Z" transform="translate(35 0)" id="Rectangle-Difference" fill="#289097" fill-rule="evenodd" stroke="none" />
+          </g>
+          <g id="1">
+            <path d="M0 1L429 1" transform="translate(109 153)" id="Line-2" fill="none" stroke="#3AB1B9" stroke-width="100" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M0 1L429 1" transform="translate(38 344)" id="Line-3" fill="none" stroke="#3AB1B9" stroke-width="100" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M0 1L429 1" transform="translate(38 557)" id="Line-4" fill="none" stroke="#3AB1B9" stroke-width="100" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M0 1L429 1" transform="translate(62 753)" id="Line-5" fill="none" stroke="#3AB1B9" stroke-width="100" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M541 24.0765C395.616 129.053 301 299.977 301 493C301 683.637 393.291 852.718 535.631 958L0 958L0 0L541 0L541 24.0765Z" id="Rectangle-Difference" fill="#3AB1B9" fill-rule="evenodd" stroke="none" />
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
