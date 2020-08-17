@@ -159,6 +159,7 @@ export default {
 .screen-answer-text {
   position: absolute;
   top: calc(40% - (94px / 2));
+  direction: rtl;
   left: 5%;
   width: 261px;
   height: 80px;
