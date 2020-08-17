@@ -63,16 +63,21 @@ export default {
       }
     },
     addCalculatorString(event) {
+      const target = document.getElementsByClassName("screen-answer-text")[0];
+      const exceptions = [".", "/", "x", "+", "-"];
       var event_innerHTML = event.target.innerText;
-      const exceptions = [".", "/", "x", "+", "-"]
+
+      target.focus();
+      target.setSelectionRange(0, 0)
+
 
       if (event_innerHTML.includes("<")) {
         this.screen_text = this.screen_text.slice(0, -1);
-        this.updateScreenLine()
+        this.updateScreenLine();
         return 0;
       } 
       
-      this.updateScreenLine(true)
+      this.updateScreenLine(true);
 
       if (!isNaN(parseInt(event_innerHTML))) {
         this.screen_text += event_innerHTML;
@@ -84,7 +89,7 @@ export default {
         return 0;
       } else if (event_innerHTML.includes("=")) {
         this.screen_text_question = this.screen_text;
-        this.screen_text = eval(this.screen_text).toString()
+        this.screen_text = eval(this.screen_text).toString();
         return 0;
       }
 
@@ -94,16 +99,6 @@ export default {
         }
       });
     },
-    setCaret (element) {
-    var range = document.createRange()
-    var sel = window.getSelection()
-    
-    range.setStart(element.value.slice(-1))
-    range.collapse(true)
-    
-    sel.removeAllRanges()
-    sel.addRange(range)
-}
   },
 };
 </script>
@@ -159,7 +154,6 @@ export default {
 .screen-answer-text {
   position: absolute;
   top: calc(40% - (94px / 2));
-  direction: rtl;
   left: 5%;
   width: 261px;
   height: 80px;
