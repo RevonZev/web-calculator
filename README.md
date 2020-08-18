@@ -1,4 +1,5 @@
 # Web Calculator
+A personal project for practicing Vue. [Goto the web calculator](https://revonzev.github.io/web-calculator/).
 
 ## Project setup
 ```
