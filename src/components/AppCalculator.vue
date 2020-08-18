@@ -17,6 +17,7 @@
     </div>
     <div class="calculator-buttons">
       <div class="buttons-a">
+        <!-- First - third column -->
         <button
           v-for="(text, index) in button_texts_a"
           :key="index"
@@ -25,6 +26,7 @@
           {{ text }}
         </button>
       </div>
+      <!-- Fourth column -->
       <div class="buttons-b">
         <button
           v-for="(text, index) in button_texts_b"
@@ -64,41 +66,42 @@ export default {
     },
     addCalculatorString(event) {
       const target = document.getElementsByClassName("screen-answer-text")[0];
-      const exceptions = [".", "/", "x", "+", "-"];
+      const exceptions = [".", "/", "+", "-"];
       var event_innerHTML = event.target.innerText;
 
+      // Make the caret stay on the right end
       target.focus();
-      target.setSelectionRange(-1, -1)
-      target.blur()
+      target.setSelectionRange(-1, -1);
+      target.blur();
 
+      this.updateScreenLine(true);
 
       if (event_innerHTML.includes("<")) {
+        // Backspace
         this.screen_text = this.screen_text.slice(0, -1);
         this.updateScreenLine();
         return 0;
-      } 
-      
-      this.updateScreenLine(true);
-
-      if (!isNaN(parseInt(event_innerHTML))) {
+      } else if (!isNaN(parseInt(event_innerHTML))) {
+        // Numbers
         this.screen_text += event_innerHTML;
         return 0;
-      }
-
-      if (event_innerHTML.includes("x")) {
+      } else if (event_innerHTML.includes("x")) {
+        // Times
         this.screen_text += "*";
         return 0;
       } else if (event_innerHTML.includes("=")) {
+        // Answer
         this.screen_text_question = this.screen_text;
         this.screen_text = eval(this.screen_text).toString();
         return 0;
+      } else {
+        // Decimal, devide, , add, subtract
+        exceptions.forEach((exception) => {
+          if (event_innerHTML.includes(exception)) {
+            this.screen_text += event_innerHTML;
+          }
+        });
       }
-
-      exceptions.forEach(exception => {
-        if (event_innerHTML.includes(exception)) {
-          this.screen_text += event_innerHTML;
-        }
-      });
     },
   },
 };
