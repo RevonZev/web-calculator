@@ -22,8 +22,9 @@
           v-for="(text, index) in button_texts_a"
           :key="index"
           v-on:click.prevent="addCalculatorString($event)"
+          v-bind:style="'grid-area:'+text[1]"
         >
-          {{ text }}
+          {{ text[0] }}
         </button>
       </div>
       <!-- Fourth column -->
@@ -32,8 +33,9 @@
           v-for="(text, index) in button_texts_b"
           :key="index"
           v-on:click.prevent="addCalculatorString($event)"
+          v-bind:style="'grid-area:'+text[1]"
         >
-          {{ text }}
+          {{ text[0] }}
         </button>
       </div>
     </div>
@@ -49,12 +51,12 @@ export default {
       screen_text_question: "",
       // prettier-ignore
       button_texts_a: [
-        "1", "2", "3",
-        "4", "5", "6",
-        "7", "8", "9",
-        "0", ".", "=",
+        ["1", "aa"], ["2", "ab"], ["3", "ac"],
+        ["4", "ad"], ["5", "ae"], ["6", "af"],
+        ["7", "ag"], ["8", "ah"], ["9", "ai"],
+        ["0", "aj"], [".", "ak"], ["=", "al"],
       ],
-      button_texts_b: ["<", "/", "x", "+", "-"],
+      button_texts_b: [["<", "ba"], ["/", "bb"], ["x", "bc"], ["+", "bd"], ["-", "be"]],
     };
   },
   methods: {
@@ -188,7 +190,7 @@ export default {
   display: flex;
   position: absolute;
   top: 160px;
-  left: 20px;
+  left: 23px;
   justify-content: space-around;
   flex-wrap: wrap;
 }
@@ -201,33 +203,40 @@ export default {
 }
 
 .buttons-a {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template: 
+  "aa ab ac"
+  "ad ae af"
+  "ag ah ai"
+  "aj ak al";
+  grid-gap: 10px;
   width: 234px;
-  justify-content: space-between;
 }
 
 .buttons-b {
-  display: flex;
-  flex-wrap: wrap;
-  width: 67px;
-  justify-content: space-between;
+  display: grid;
+  grid-template: 
+  "ba"
+  "bb"
+  "bc"
+  "bd"
+  "be";
+  grid-gap: 10px;
   margin-left: 10px;
+  width: 50px;
 }
 
 .buttons-a button {
   font-size: 55px;
-  width: 67px;
-  height: 67px;
+  width: 100%;
+  height: 100%;
   border-radius: 10px;
-  margin-bottom: 10px;
 }
 
 .buttons-b button {
   font-size: 30px;
-  width: 50px;
-  height: 50px;
+  width: 100%;
+  height: 100%;
   border-radius: 5px;
-  margin-bottom: 3px;
 }
 </style>
