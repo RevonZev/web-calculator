@@ -47,6 +47,7 @@ export default {
       screen_has_text: false,
       screen_text: "",
       screen_text_question: "",
+      // prettier-ignore
       button_texts_a: [
         "1", "2", "3",
         "4", "5", "6",
