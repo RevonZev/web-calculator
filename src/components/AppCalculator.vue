@@ -203,6 +203,9 @@ export default {
 }
 
 .buttons-a {
+  position: absolute;
+  top: 0;
+  left: 0;
   display: grid;
   grid-template: 
   "aa ab ac"
@@ -211,9 +214,13 @@ export default {
   "aj ak al";
   grid-gap: 10px;
   width: 234px;
+  height: 294px;
 }
 
 .buttons-b {
+  position: absolute;
+  top: 0;
+  left: 234px;
   display: grid;
   grid-template: 
   "ba"
@@ -224,6 +231,7 @@ export default {
   grid-gap: 10px;
   margin-left: 10px;
   width: 50px;
+  height: 294px;
 }
 
 .buttons-a button {
