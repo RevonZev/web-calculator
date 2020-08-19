@@ -1,11 +1,26 @@
 <template>
-  <div class="copyright">
-    © 2020 Revon Zev
+  <div class="copyright" v-on:click="changeName()">
+    © 2020 {{ name }}
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      name: "Revon Zev",
+    }
+  },
+  methods: {
+    changeName() {
+      if (this.name == "Revon Zev") {
+        this.name = "Senoaji Sapta Ramadhana";
+      } else {
+        this.name = "Revon Zev"
+      }
+    }
+  },
+};
 </script>
 
 <style scoped>
