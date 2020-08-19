@@ -247,4 +247,71 @@ export default {
   height: 100%;
   border-radius: 5px;
 }
+
+@media screen and (max-height: 475px) {
+  .app-calculator {
+    position: absolute;
+    transform-origin: center;
+    top: calc(50% - (340px / 2));
+    left: calc(50% - (475px / 2));
+    width: 475px;
+    height: 340px;
+    border-radius: 10px;
+    background: #2e282a;
+    box-shadow: -10px 10px 10px rgba(32, 36, 39, 0.63);
+  }
+
+  .calculator-screen {
+    position: absolute;
+    color: #131112;
+    top: 20px;
+    left: 20px;
+    width: 430px;
+    height: 72px;
+    border-radius: 10px;
+    background: #edddd4;
+  }
+
+  .screen-line {
+    position: absolute;
+    top: calc(50% - (58px / 2));
+    left: 95%;
+    width: 6px;
+    height: 58px;
+    border-radius: 10px;
+    background: #289097;
+    transform: scaleY(100%);
+    transition: transform 300ms ease-in-out;
+  }
+
+  .screen-line-off {
+    position: absolute;
+    top: calc(50% - (58px / 2));
+    left: 95%;
+    width: 6px;
+    height: 58px;
+    border-radius: 10px;
+    background: #289097;
+    transform: scaleY(0%);
+    transition: transform 300ms ease-in-out;
+  }
+
+  .screen-answer-text {
+    position: absolute;
+    top: calc(45% - (58px / 2));
+    left: 1%;
+    width: 395px;
+    height: 58px;
+    font-size: 64px;
+    font-weight: 400;
+    line-height: 77px;
+    text-align: right;
+    background: none;
+    border: none;
+  }
+}
+
+.screen-question-text {
+  display: none;
+}
 </style>
