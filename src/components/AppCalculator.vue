@@ -22,7 +22,7 @@
           v-for="(text, index) in button_texts_a"
           :key="index"
           v-on:click.prevent="addCalculatorString($event)"
-          v-bind:style="'grid-area:'+text[1]"
+          v-bind:style="'grid-area:' + text[1]"
         >
           {{ text[0] }}
         </button>
@@ -33,7 +33,7 @@
           v-for="(text, index) in button_texts_b"
           :key="index"
           v-on:click.prevent="addCalculatorString($event)"
-          v-bind:style="'grid-area:'+text[1]"
+          v-bind:style="'grid-area:' + text[1]"
         >
           {{ text[0] }}
         </button>
@@ -56,7 +56,13 @@ export default {
         ["7", "ag"], ["8", "ah"], ["9", "ai"],
         ["0", "aj"], [".", "ak"], ["=", "al"],
       ],
-      button_texts_b: [["<", "ba"], ["/", "bb"], ["x", "bc"], ["+", "bd"], ["-", "be"]],
+      button_texts_b: [
+        ["<", "ba"],
+        ["/", "bb"],
+        ["x", "bc"],
+        ["+", "bd"],
+        ["-", "be"],
+      ],
     };
   },
   methods: {
@@ -207,6 +213,7 @@ export default {
   top: 0;
   left: 0;
   display: grid;
+  /* prettier-ignore */
   grid-template: 
   "aa ab ac"
   "ad ae af"
@@ -222,6 +229,7 @@ export default {
   top: 0;
   left: 234px;
   display: grid;
+  /* prettier-ignore */
   grid-template: 
   "ba"
   "bb"
@@ -309,9 +317,63 @@ export default {
     background: none;
     border: none;
   }
-}
 
-.screen-question-text {
-  display: none;
+  .screen-question-text {
+    display: none;
+  }
+
+  .calculator-buttons {
+    display: flex;
+    position: absolute;
+    top: 110px;
+    left: 13px;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
+  .buttons-a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: grid;
+    /* prettier-ignore */
+    grid-template: 
+    "aa ab ac ad . ."
+    "ae af ag ah . ."
+    "ai aj ak al al al";
+    grid-gap: 5px;
+    width: 375px;
+    height: 220px;
+  }
+
+  .buttons-b {
+    position: absolute;
+    top: 0;
+    left: 305px;
+    display: grid;
+    /* prettier-ignore */
+    grid-template: 
+    "bd ba"
+    "be bb"
+    ". bc";
+    grid-gap: 5px;
+    margin-left: 10px;
+    width: 135px;
+    height: 220px;
+  }
+
+  .buttons-a button {
+    font-size: 55px;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+  }
+
+  .buttons-b button {
+    font-size: 55px;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+  }
 }
 </style>
