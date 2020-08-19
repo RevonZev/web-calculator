@@ -22,8 +22,9 @@
           v-for="(text, index) in button_texts_a"
           :key="index"
           v-on:click.prevent="addCalculatorString($event)"
+          v-bind:style="'grid-area:' + text[1]"
         >
-          {{ text }}
+          {{ text[0] }}
         </button>
       </div>
       <!-- Fourth column -->
@@ -32,8 +33,9 @@
           v-for="(text, index) in button_texts_b"
           :key="index"
           v-on:click.prevent="addCalculatorString($event)"
+          v-bind:style="'grid-area:' + text[1]"
         >
-          {{ text }}
+          {{ text[0] }}
         </button>
       </div>
     </div>
@@ -49,12 +51,18 @@ export default {
       screen_text_question: "",
       // prettier-ignore
       button_texts_a: [
-        "1", "2", "3",
-        "4", "5", "6",
-        "7", "8", "9",
-        "0", ".", "=",
+        ["1", "aa"], ["2", "ab"], ["3", "ac"],
+        ["4", "ad"], ["5", "ae"], ["6", "af"],
+        ["7", "ag"], ["8", "ah"], ["9", "ai"],
+        ["0", "aj"], [".", "ak"], ["=", "al"],
       ],
-      button_texts_b: ["<", "/", "x", "+", "-"],
+      button_texts_b: [
+        ["<", "ba"],
+        ["/", "bb"],
+        ["x", "bc"],
+        ["+", "bd"],
+        ["-", "be"],
+      ],
     };
   },
   methods: {
@@ -188,7 +196,7 @@ export default {
   display: flex;
   position: absolute;
   top: 160px;
-  left: 20px;
+  left: 23px;
   justify-content: space-around;
   flex-wrap: wrap;
 }
@@ -201,33 +209,171 @@ export default {
 }
 
 .buttons-a {
-  display: flex;
-  flex-wrap: wrap;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: grid;
+  /* prettier-ignore */
+  grid-template: 
+  "aa ab ac"
+  "ad ae af"
+  "ag ah ai"
+  "aj ak al";
+  grid-gap: 10px;
   width: 234px;
-  justify-content: space-between;
+  height: 294px;
 }
 
 .buttons-b {
-  display: flex;
-  flex-wrap: wrap;
-  width: 67px;
-  justify-content: space-between;
+  position: absolute;
+  top: 0;
+  left: 234px;
+  display: grid;
+  /* prettier-ignore */
+  grid-template: 
+  "ba"
+  "bb"
+  "bc"
+  "bd"
+  "be";
+  grid-gap: 10px;
   margin-left: 10px;
+  width: 50px;
+  height: 294px;
 }
 
 .buttons-a button {
   font-size: 55px;
-  width: 67px;
-  height: 67px;
+  width: 100%;
+  height: 100%;
   border-radius: 10px;
-  margin-bottom: 10px;
 }
 
 .buttons-b button {
   font-size: 30px;
-  width: 50px;
-  height: 50px;
+  width: 100%;
+  height: 100%;
   border-radius: 5px;
-  margin-bottom: 3px;
+}
+
+@media screen and (max-height: 475px) {
+  .app-calculator {
+    position: absolute;
+    transform-origin: center;
+    top: calc(50% - (340px / 2));
+    left: calc(50% - (475px / 2));
+    width: 475px;
+    height: 340px;
+    border-radius: 10px;
+    background: #2e282a;
+    box-shadow: -10px 10px 10px rgba(32, 36, 39, 0.63);
+  }
+
+  .calculator-screen {
+    position: absolute;
+    color: #131112;
+    top: 20px;
+    left: 20px;
+    width: 430px;
+    height: 72px;
+    border-radius: 10px;
+    background: #edddd4;
+  }
+
+  .screen-line {
+    position: absolute;
+    top: calc(50% - (58px / 2));
+    left: 95%;
+    width: 6px;
+    height: 58px;
+    border-radius: 10px;
+    background: #289097;
+    transform: scaleY(100%);
+    transition: transform 300ms ease-in-out;
+  }
+
+  .screen-line-off {
+    position: absolute;
+    top: calc(50% - (58px / 2));
+    left: 95%;
+    width: 6px;
+    height: 58px;
+    border-radius: 10px;
+    background: #289097;
+    transform: scaleY(0%);
+    transition: transform 300ms ease-in-out;
+  }
+
+  .screen-answer-text {
+    position: absolute;
+    top: calc(45% - (58px / 2));
+    left: 1%;
+    width: 395px;
+    height: 58px;
+    font-size: 64px;
+    font-weight: 400;
+    line-height: 77px;
+    text-align: right;
+    background: none;
+    border: none;
+  }
+
+  .screen-question-text {
+    display: none;
+  }
+
+  .calculator-buttons {
+    display: flex;
+    position: absolute;
+    top: 110px;
+    left: 13px;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
+  .buttons-a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: grid;
+    /* prettier-ignore */
+    grid-template: 
+    "aa ab ac ad . ."
+    "ae af ag ah . ."
+    "ai aj ak al al al";
+    grid-gap: 5px;
+    width: 375px;
+    height: 220px;
+  }
+
+  .buttons-b {
+    position: absolute;
+    top: 0;
+    left: 305px;
+    display: grid;
+    /* prettier-ignore */
+    grid-template: 
+    "bd ba"
+    "be bb"
+    ". bc";
+    grid-gap: 5px;
+    margin-left: 10px;
+    width: 135px;
+    height: 220px;
+  }
+
+  .buttons-a button {
+    font-size: 55px;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+  }
+
+  .buttons-b button {
+    font-size: 55px;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+  }
 }
 </style>
